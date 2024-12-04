@@ -1,0 +1,72 @@
+{
+  "name": "@pixam/voe",
+  "version": "1.0.0",
+  "description": "A production-grade API wrapper for VOE video hosting service",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "clean": "rm -rf dist",
+    "prebuild": "bun run clean",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "bunx eslint \"src/**/*.ts\"",
+    "lint:fix": "bunx eslint \"src/**/*.ts\" --fix",
+    "format": "bunx prettier --write \"src/**/*.ts\"",
+    "format:check": "bunx prettier --check \"src/**/*.ts\"",
+    "typecheck": "bunx tsc --noEmit",
+    "prepare": "bun run build",
+    "prepublishOnly": "bun run lint && bun run format:check && bun run test",
+    "preversion": "bun run lint",
+    "version": "bun run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "voe",
+    "api",
+    "video",
+    "hosting",
+    "wrapper",
+    "typescript",
+    "api-client",
+    "voe-api"
+  ],
+  "author": "Pixam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixam/voe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pixam/voe/issues"
+  },
+  "homepage": "https://github.com/pixam/voe#readme",
+  "devDependencies": {
+    "@eslint/js": "^8.56.0",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.0",
+    "typescript": "~5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
