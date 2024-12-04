@@ -40,12 +40,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pixam/voe.git"
+    "url": "git+https://github.com/pixamstudio/voe.git"
   },
   "bugs": {
-    "url": "https://github.com/pixam/voe/issues"
+    "url": "https://github.com/pixamstudio/voe/issues"
   },
-  "homepage": "https://github.com/pixam/voe#readme",
+  "homepage": "https://github.com/pixamstudio/voe#readme",
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "@types/bun": "latest",
